@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Sidebar Bootstrap</title>
+  <style>
+    .side-navbar {
+      width: 180px;
+      height: 100%;
+      position: fixed;
+      margin-left: -300px;
+      background-color: #000000;
+      transition: 0.5s;
+      z-index: 9999; /* Agregamos z-index con un valor alto */
+    }
+    .nav-link:active {
+        color: #000000;
+    }
+    .nav-link:focus {
+        color: #000000;
+    }
+    .nav-link:hover {
+      background-color: #00000026;
+    }
+    .my-container {
+      transition: 0.4s;
+    }
+    .active-nav {
+      margin-left: 0;
+    }
+    /* for main section */
+    .active-cont {
+      margin-left: 180px;
+    }
+    #menu-btn {
+      background-color: #000000;
+      color: #fff;
+      margin-left: -62px;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column bg-dark" id="sidebar">
+    <ul class="nav flex-column text-white w-100">
+      <li class="nav-item">
+        <a href="#" class="nav-link h3 text-white my-2">
+          Side Nav
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <span class="mx-2">Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <span class="mx-2">About</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <span class="mx-2">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-12">
+        <div class="p-1 my-container active-cont">
+          <button id="menu-btn" class="navbar-toggler" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    var menu_btn = document.querySelector("#menu-btn");
+    var sidebar = document.querySelector("#sidebar");
+    var container = document.querySelector(".my-container");
+    menu_btn.addEventListener("click", () => {
+      sidebar.classList.toggle("active-nav");
+      container.classList.toggle("active-cont");
+    });
+  </script>
+</body>
+</html>
+
+
+
